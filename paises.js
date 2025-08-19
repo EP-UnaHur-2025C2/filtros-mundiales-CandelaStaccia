@@ -10,7 +10,8 @@ class FiltroPaises {
       this.formato = this.defaultFormato;
       this.filtros = [];
       try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
+        const response = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,population,borders,languages,subregion");
+        //cambié la url porque con /all no traía nada, había que especificar campos y puse esos ^
         this.data = await response.json();
       } catch (ex) {
         console.log(ex.message);
